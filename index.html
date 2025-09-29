@@ -14,6 +14,18 @@
 	</head>
 	<body class="is-preload">
 
+		<!--door-->
+		<div class="door-container">
+   		<div class="door left-door"></div>
+    	<div class="door right-door"></div>
+
+    	<button class="open-btn" onclick="openDoor()"><span class="span-depan">
+			Jemputan<br>Walimatulurus<br>Syafiq &amp; Aida</span>
+		</button>
+  		</div>
+
+
+
 		<!-- Wrapper -->
 			<div id="wrapper" class="fade-in">
 
@@ -212,6 +224,30 @@
     			audio.muted = false; // unmute after first user interaction
   				});
 			</script>
+
+			<script>
+				function openDoor() {
+  				const leftDoor = document.querySelector('.left-door');
+  				const rightDoor = document.querySelector('.right-door');
+  				const mainContent = document.querySelector('.main-content');
+  				const button = document.querySelector('.open-btn');
+
+  				// Animate doors opening
+  				leftDoor.style.transform = 'rotateY(-100deg)';
+  				rightDoor.style.transform = 'rotateY(100deg)';
+
+  				// Hide button during animation
+  				button.style.display = 'none';
+
+  				// Show main content after animation completes
+  				setTimeout(() => {
+    			document.querySelector('.door-container').style.display = 'none';
+    			mainContent.style.display = 'block';
+    			document.body.style.overflow = 'auto';
+ 				 }, 1200); // Match the CSS transition duration
+				}
+			</script>
+
 
 	</body>
 

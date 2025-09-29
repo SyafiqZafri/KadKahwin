@@ -4687,3 +4687,105 @@ input, select, textarea {
 		}
 
 	}
+
+
+	/* Container holding the doors */
+.door-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  z-index: 999;
+  perspective: 1200px; /* Adds 3D depth */
+}
+
+/* Translucent door panels */
+.door {
+  width: 50%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Transparent black overlay */
+  backdrop-filter: blur(8px);      /* Frosted glass effect */
+  /*border: 1px solid rgba(255, 255, 255, 0.2);  Glass border */
+  transition: transform 1.2s ease-in-out;
+  /* box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.5);*/
+}
+
+.left-door {
+  transform-origin: left;
+}
+
+.right-door {
+  transform-origin: right;
+}
+/*
+.open-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 15px 30px;
+  font-size: 18px;
+  background: rgba(255, 255, 255, 0.8);
+  color: #000;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+  transition: background 0.3s;
+}
+
+.open-btn:hover {
+  background: rgba(255, 255, 255, 1);
+}
+.open-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 200px;
+  height: 200px;
+  border-radius: 50%; /* wajib untuk bulat */
+
+.open-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 200px;
+  height: 200px;
+  border-radius: 50%; /* wajib untuk bulat */
+
+  background-image: url('./images/button-bg.jpg'); /* pastikan path betul */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.open-btn:hover {
+  transform: translate(-50%, -50%) scale(1.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.span-depan {
+  display: flex;                  /* guna flexbox */
+  justify-content: center;        /* horizontal center */
+  align-items: center;            /* vertical center */
+  text-align: center;
+
+  font-family: Copperplate, Papyrus, fantasy;
+  font-weight: 900;
+  color: ivory;
+
+  width: 100%;                     /* pastikan span penuh parent */
+  height: 100%;                    /* ikut parent container */
+}
